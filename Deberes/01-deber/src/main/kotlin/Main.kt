@@ -1,7 +1,10 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.Scanner
 
 fun main() {
     val scanner = Scanner(System.`in`)
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
     val paises = leerDatosDesdeJson("paises.json")
 
     while (true) {
@@ -26,7 +29,7 @@ fun main() {
                 println("Es Independiente (true/false):")
                 val esIndependiente = scanner.nextLine().toBoolean()
                 println("Fecha de Fundación (YYYY-MM-DD):")
-                val fechaFundacion = scanner.nextLine()
+                val fechaFundacion = LocalDate.parse(scanner.nextLine(), formatter)
 
                 val nuevoPais = Pais(nombre, superficie, esIndependiente, fechaFundacion)
                 crearPais(paises, nuevoPais)
@@ -37,9 +40,40 @@ fun main() {
                 val nombre = scanner.nextLine()
                 val pais = paises.find { it.nombre == nombre }
                 if (pais != null) {
-                    println("Nuevo nombre del País:")
-                    val nuevoNombre = scanner.nextLine()
-                    actualizarPais(pais, nuevoNombre)
+                    while (true) {
+                        println("\nActualizar País")
+                        println("1. Nombre")
+                        println("2. Superficie")
+                        println("3. Independencia")
+                        println("4. Fecha de Fundación")
+                        println("5. Volver al menú principal")
+                        println("Elige una opción:")
+
+                        when (scanner.nextLine().toInt()) {
+                            1 -> {
+                                println("Nuevo nombre del País:")
+                                val nuevoNombre = scanner.nextLine()
+                                actualizarPaisNombre(pais, nuevoNombre)
+                            }
+                            2 -> {
+                                println("Nueva superficie del País:")
+                                val nuevaSuperficie = scanner.nextLine().toDouble()
+                                actualizarPaisSuperficie(pais, nuevaSuperficie)
+                            }
+                            3 -> {
+                                println("Es Independiente (true/false):")
+                                val nuevaIndependencia = scanner.nextLine().toBoolean()
+                                actualizarPaisIndependencia(pais, nuevaIndependencia)
+                            }
+                            4 -> {
+                                println("Nueva fecha de Fundación (YYYY-MM-DD):")
+                                val nuevaFechaFundacion = LocalDate.parse(scanner.nextLine(), formatter)
+                                actualizarPaisFechaFundacion(pais, nuevaFechaFundacion)
+                            }
+                            5 -> break
+                            else -> println("Opción no válida.")
+                        }
+                    }
                 } else {
                     println("País no encontrado.")
                 }
@@ -63,7 +97,7 @@ fun main() {
                     println("Es Capital (true/false):")
                     val esCapital = scanner.nextLine().toBoolean()
                     println("Fecha de Establecimiento (YYYY-MM-DD):")
-                    val fechaEstablecimiento = scanner.nextLine()
+                    val fechaEstablecimiento = LocalDate.parse(scanner.nextLine(), formatter)
 
                     val nuevaCiudad = Ciudad(nombreCiudad, poblacion, area, esCapital, fechaEstablecimiento)
                     crearCiudad(pais, nuevaCiudad)
@@ -90,9 +124,46 @@ fun main() {
                     val nombreCiudad = scanner.nextLine()
                     val ciudad = pais.ciudades.find { it.nombre == nombreCiudad }
                     if (ciudad != null) {
-                        println("Nuevo nombre de la Ciudad:")
-                        val nuevoNombre = scanner.nextLine()
-                        actualizarCiudad(ciudad, nuevoNombre)
+                        while (true) {
+                            println("\nActualizar Ciudad")
+                            println("1. Nombre")
+                            println("2. Población")
+                            println("3. Área")
+                            println("4. Es Capital")
+                            println("5. Fecha de Establecimiento")
+                            println("6. Volver al menú principal")
+                            println("Elige una opción:")
+
+                            when (scanner.nextLine().toInt()) {
+                                1 -> {
+                                    println("Nuevo nombre de la Ciudad:")
+                                    val nuevoNombre = scanner.nextLine()
+                                    actualizarCiudadNombre(ciudad, nuevoNombre)
+                                }
+                                2 -> {
+                                    println("Nueva población de la Ciudad:")
+                                    val nuevaPoblacion = scanner.nextLine().toInt()
+                                    actualizarCiudadPoblacion(ciudad, nuevaPoblacion)
+                                }
+                                3 -> {
+                                    println("Nueva área de la Ciudad:")
+                                    val nuevaArea = scanner.nextLine().toDouble()
+                                    actualizarCiudadArea(ciudad, nuevaArea)
+                                }
+                                4 -> {
+                                    println("Es Capital (true/false):")
+                                    val nuevoEsCapital = scanner.nextLine().toBoolean()
+                                    actualizarCiudadEsCapital(ciudad, nuevoEsCapital)
+                                }
+                                5 -> {
+                                    println("Nueva fecha de Establecimiento (YYYY-MM-DD):")
+                                    val nuevaFechaEstablecimiento = LocalDate.parse(scanner.nextLine(), formatter)
+                                    actualizarCiudadFechaEstablecimiento(ciudad, nuevaFechaEstablecimiento)
+                                }
+                                6 -> break
+                                else -> println("Opción no válida.")
+                            }
+                        }
                     } else {
                         println("Ciudad no encontrada.")
                     }
