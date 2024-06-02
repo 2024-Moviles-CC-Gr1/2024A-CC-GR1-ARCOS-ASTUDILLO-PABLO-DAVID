@@ -33,6 +33,7 @@ fun main() {
 
                 val nuevoPais = Pais(nombre, superficie, esIndependiente, fechaFundacion)
                 crearPais(paises, nuevoPais)
+                guardarDatosEnJson(paises, "paises.json") // Guardar después de crear
             }
             2 -> leerPaises(paises)
             3 -> {
@@ -73,6 +74,7 @@ fun main() {
                             5 -> break
                             else -> println("Opción no válida.")
                         }
+                        guardarDatosEnJson(paises, "paises.json") // Guardar después de actualizar
                     }
                 } else {
                     println("País no encontrado.")
@@ -82,6 +84,7 @@ fun main() {
                 println("Nombre del País a eliminar:")
                 val nombre = scanner.nextLine()
                 eliminarPais(paises, nombre)
+                guardarDatosEnJson(paises, "paises.json") // Guardar después de eliminar
             }
             5 -> {
                 println("Nombre del País al que pertenece la Ciudad:")
@@ -101,6 +104,7 @@ fun main() {
 
                     val nuevaCiudad = Ciudad(nombreCiudad, poblacion, area, esCapital, fechaEstablecimiento)
                     crearCiudad(pais, nuevaCiudad)
+                    guardarDatosEnJson(paises, "paises.json") // Guardar después de crear ciudad
                 } else {
                     println("País no encontrado.")
                 }
@@ -163,6 +167,7 @@ fun main() {
                                 6 -> break
                                 else -> println("Opción no válida.")
                             }
+                            guardarDatosEnJson(paises, "paises.json") // Guardar después de actualizar
                         }
                     } else {
                         println("Ciudad no encontrada.")
@@ -179,6 +184,7 @@ fun main() {
                     println("Nombre de la Ciudad a eliminar:")
                     val nombreCiudad = scanner.nextLine()
                     eliminarCiudad(pais, nombreCiudad)
+                    guardarDatosEnJson(paises, "paises.json") // Guardar después de eliminar
                 } else {
                     println("País no encontrado.")
                 }
