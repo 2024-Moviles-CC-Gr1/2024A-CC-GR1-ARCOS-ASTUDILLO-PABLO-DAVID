@@ -16,9 +16,6 @@
             android:name=".ACicloVida"
             android:exported="false" />
         <activity
-            android:name=".BListView"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
