@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.a2024accgr1vaes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

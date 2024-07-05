@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.a2024accgr1vaes
 
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
@@ -95,6 +95,26 @@ class BListView : AppCompatActivity() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     fun anadirEntrenador(adaptador:ArrayAdapter<BEntrenador>){
         arreglo.add(
             BEntrenador(4,"Wendy","d@d.com")
@@ -114,5 +134,3 @@ class BListView : AppCompatActivity() {
 
 
 }
-
-
