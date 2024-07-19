@@ -1,4 +1,4 @@
-package com.example.a2024accgr1vaes.ui.theme
+package com.example.pdaa2024accgr1.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

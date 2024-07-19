@@ -1,4 +1,4 @@
-package com.example.a2024accgr1vaes
+package com.example.pdaa2024accgr1
 
 import android.app.Activity
 import android.content.Intent
@@ -103,6 +103,13 @@ class MainActivity : AppCompatActivity() {
                 )
                 callbackContenidoIntentExplicito.launch(intentExplicito)
             }
+
+        EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
+
+        val botonSqlite = findViewById<Button>(R.id.btn_sqlite)
+        botonSqlite.setOnClickListener {
+            irActividad(ECrudEntrenador::class.java)
+        }
     }
     fun irActividad(
         clase: Class<*>
