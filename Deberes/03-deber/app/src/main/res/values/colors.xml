@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#128C7E</color>
+    <color name="purple_500">#075E54</color>
+    <color name="purple_700">#054D44</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whatsapp_green">#075E54</color>
+    <color name="whatsapp_light_green">#128C7E</color>
+    <color name="whatsapp_dark_green">#054D44</color>
+    <color name="whatsapp_background">#ECE5DD</color>
+    <color name="whatsapp_text_light">#FFFFFF</color>
+    <color name="whatsapp_text_dark">#263238</color>
+</resources>

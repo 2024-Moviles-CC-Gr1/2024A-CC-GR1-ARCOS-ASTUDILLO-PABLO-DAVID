@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@color/whatsapp_green"
+        android:pathData="M15.55,1H8.45C7.63,1 6.88,1.67 6.62,2.69L2,8.31V15.69L6.62,21.31C6.88,22.33 7.63,23 8.45,23H15.55C16.37,23 17.12,22.33 17.38,21.31L22,15.69V8.31L17.38,2.69C17.12,1.67 16.37,1 15.55,1M15.55,3H8.45C8.2,3 8,3.2 8,3.45V6H16V3.45C16,3.2 15.8,3 15.55,3M19,8H5V16H19V8Z" />
+</vector>
