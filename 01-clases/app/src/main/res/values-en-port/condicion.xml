@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="condicion">Hello world! This is the condition 2</string>
-    <color name="text_color">#FFFF5722</color>
-    <color name="background_color">#FF4CAF50</color>
-</resources>
