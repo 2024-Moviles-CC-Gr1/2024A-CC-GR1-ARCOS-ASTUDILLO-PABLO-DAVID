@@ -4,50 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_marginEnd="16dp"
+    tools:context=".ui.status.StatusFragment">
 
-    <ImageView
+    <!-- ImageView for status -->
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageViewStatus"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_green"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintDimensionRatio="1"
-        android:background="@drawable/border_green" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponent" />
 
+    <!-- TextView for contact name -->
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:textSize="12sp"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageViewStatus"
-        tools:text="John Doe" />
+        android:textAlignment="center"/>
 
-    <ImageView
-        android:id="@+id/imageViewAddStatus"
+    <!-- TextView for add status button -->
+    <TextView
+        android:id="@+id/textViewAddStatus"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="gone" />
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/ic_add"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewStatus"
+        app:layout_constraintEnd_toEndOf="@id/imageViewStatus"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

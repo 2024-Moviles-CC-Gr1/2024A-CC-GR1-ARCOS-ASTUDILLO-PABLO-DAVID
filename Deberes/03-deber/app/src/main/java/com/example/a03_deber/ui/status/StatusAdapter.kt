@@ -24,11 +24,13 @@ class StatusAdapter(private val statusList: List<Status>) : RecyclerView.Adapter
             .load(status.imageUrl)
             .into(holder.imageViewStatus)
         holder.textViewName.text = status.name
-        holder.imageViewAddStatus.visibility = if (position == 0) View.VISIBLE else View.GONE
         holder.imageViewStatus.background = if (status.isSeen)
             holder.itemView.context.getDrawable(R.drawable.border_gray)
         else
             holder.itemView.context.getDrawable(R.drawable.border_green)
+
+        // Show the add status button only for the first item
+        holder.textViewAddStatus.visibility = if (position == 0) View.VISIBLE else View.GONE
     }
 
     override fun getItemCount() = statusList.size
@@ -36,6 +38,6 @@ class StatusAdapter(private val statusList: List<Status>) : RecyclerView.Adapter
     class StatusViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageViewStatus: ImageView = itemView.findViewById(R.id.imageViewStatus)
         val textViewName: TextView = itemView.findViewById(R.id.textViewName)
-        val imageViewAddStatus: ImageView = itemView.findViewById(R.id.imageViewAddStatus)
+        val textViewAddStatus: TextView = itemView.findViewById(R.id.textViewAddStatus)
     }
 }
