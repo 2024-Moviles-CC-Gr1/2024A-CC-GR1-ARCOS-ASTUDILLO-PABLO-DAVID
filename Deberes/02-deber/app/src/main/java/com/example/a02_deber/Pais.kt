@@ -6,7 +6,7 @@ data class Pais(
     var id: Long,
     var nombre: String,
     var superficie: Double,
-    var esIndependiente: Boolean,
-    var fechaFundacion: LocalDate,
+    var es_independiente: Boolean,
+    var fecha_fundacion: LocalDate,
     val ciudades: MutableList<Ciudad> = mutableListOf()
 )

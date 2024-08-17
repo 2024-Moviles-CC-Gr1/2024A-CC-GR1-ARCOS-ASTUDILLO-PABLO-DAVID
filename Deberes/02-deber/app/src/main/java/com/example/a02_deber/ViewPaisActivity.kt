@@ -47,8 +47,8 @@ class ViewPaisActivity : AppCompatActivity() {
         pais?.let {
             nombreTextView.text = it.nombre
             superficieTextView.text = it.superficie.toString()
-            independienteTextView.text = if (it.esIndependiente) "Sí" else "No"
-            fechaFundacionTextView.text = it.fechaFundacion.toString()
+            independienteTextView.text = if (it.es_independiente) "Sí" else "No"
+            fechaFundacionTextView.text = it.fecha_fundacion.toString()
         }
     }
 

@@ -42,11 +42,7 @@ class MainActivity : AppCompatActivity() {
         paisesListView.adapter = adapter
 
         paisesListView.setOnItemClickListener { _, _, position, _ ->
-            val selectedPais = paises[position]
-            selectedPaisId = selectedPais.id
-            val intent = Intent(this, ViewPaisActivity::class.java)
-            intent.putExtra("PAIS_ID", selectedPaisId)
-            startActivity(intent)
+            // No hacer nada aquí para evitar que se abra una nueva actividad al hacer clic en el país
         }
     }
 

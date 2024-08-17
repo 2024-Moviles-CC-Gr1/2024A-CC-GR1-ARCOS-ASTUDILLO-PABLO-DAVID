@@ -6,31 +6,31 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/edittext_nombre"
+        android:id="@+id/nombreEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre" />
 
     <EditText
-        android:id="@+id/edittext_superficie"
+        android:id="@+id/superficieEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Superficie" />
 
     <EditText
-        android:id="@+id/edittext_independencia"
+        android:id="@+id/independienteEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Es Independiente (true/false)" />
 
     <EditText
-        android:id="@+id/edittext_fecha_fundacion"
+        android:id="@+id/fechaFundacionEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Fecha de Fundación (YYYY-MM-DD)" />
 
     <Button
-        android:id="@+id/button_save_pais"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar País" />

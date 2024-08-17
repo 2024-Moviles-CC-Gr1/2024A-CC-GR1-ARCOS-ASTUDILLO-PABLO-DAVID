@@ -1,5 +1,6 @@
 package com.example.a02_deber
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +15,7 @@ class AddPaisActivity : AppCompatActivity() {
     private lateinit var independienteEditText: EditText
     private lateinit var fechaFundacionEditText: EditText
     private lateinit var addButton: Button
+    private lateinit var backButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +31,23 @@ class AddPaisActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             val nombre = nombreEditText.text.toString()
             val superficie = superficieEditText.text.toString().toDouble()
-            val esIndependiente = independienteEditText.text.toString().toInt() == 1
-            val fechaFundacion = LocalDate.parse(fechaFundacionEditText.text.toString())
+            val es_idependiente = independienteEditText.text.toString().toInt() == 1
+            val fecha_fundacion = LocalDate.parse(fechaFundacionEditText.text.toString())
 
-            val pais = Pais(0, nombre, superficie, esIndependiente, fechaFundacion)
+            val pais = Pais(0, nombre, superficie, es_idependiente, fecha_fundacion)
             db.addPais(pais)
+
+            // Finaliza la actividad después de guardar el país
             finish()
+        }
+
+
+        backButton = findViewById(R.id.button_back)
+
+
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }
