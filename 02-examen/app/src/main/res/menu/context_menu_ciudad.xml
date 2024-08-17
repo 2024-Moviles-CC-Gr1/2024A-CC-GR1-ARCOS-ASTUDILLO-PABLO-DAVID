@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_mapa"
+        android:title="Ver en el mapa" />
+    <item
+        android:id="@+id/menu_editar_ciudad"
+        android:title="Editar" />
+    <item
+        android:id="@+id/menu_eliminar_ciudad"
+        android:title="Eliminar" />
+</menu>
