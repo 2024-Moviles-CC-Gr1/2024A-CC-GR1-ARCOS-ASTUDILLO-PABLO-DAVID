@@ -38,13 +38,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadPaises() {
         val paises = db.getAllPaises()
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, paises.map { it.nombre })
+        val adapter = PaisAdapter(this, paises)
         paisesListView.adapter = adapter
 
         paisesListView.setOnItemClickListener { _, _, position, _ ->
-            // No hacer nada aquí para evitar que se abra una nueva actividad al hacer clic en el país
+            val selectedPais = paises[position]
+            selectedPaisId = selectedPais.id
+            val intent = Intent(this, ViewPaisActivity::class.java)
+            intent.putExtra("PAIS_ID", selectedPaisId)
+            startActivity(intent)
         }
     }
+
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
@@ -76,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             else -> super.onContextItemSelected(item)
         }
     }
+
 
     override fun onResume() {
         super.onResume()
