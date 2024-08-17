@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadPaises() {
         val paises = db.getAllPaises()
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, paises.map { it.nombre })
+        val adapter = PaisAdapter(this, paises)
         paisesListView.adapter = adapter
 
         paisesListView.setOnItemClickListener { _, _, position, _ ->
@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             else -> super.onContextItemSelected(item)
         }
     }
+
 
     override fun onResume() {
         super.onResume()

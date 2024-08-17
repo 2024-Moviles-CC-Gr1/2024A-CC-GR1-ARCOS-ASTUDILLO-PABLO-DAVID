@@ -54,16 +54,18 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     // Métodos CRUD para País
     fun addPais(pais: Pais): Long {
         val db = this.writableDatabase
-        val values = ContentValues().apply {
-            put(KEY_PAIS_NOMBRE, pais.nombre)
-            put(KEY_PAIS_SUPERFICIE, pais.superficie)
-            put(KEY_PAIS_INDEPENDIENTE, if (pais.esIndependiente) 1 else 0)
-            put(KEY_PAIS_FECHA_FUNDACION, pais.fechaFundacion.toString())
+        val contentValues = ContentValues().apply {
+            put("nombre", pais.nombre)
+            put("superficie", pais.superficie)
+            put("es_independiente", if (pais.es_independiente) 1 else 0)
+            put("fecha_fundacion", pais.fecha_fundacion.toString())  // Asegúrate de almacenar la fecha como texto
         }
-        val id = db.insert(TABLE_PAIS, null, values)
+
+        val result = db.insert("Pais", null, contentValues)
         db.close()
-        return id
+        return result  // Devuelve el ID del nuevo registro insertado o -1 si falla
     }
+
 
 
     fun getAllPaises(): List<Pais> {
@@ -92,8 +94,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val values = ContentValues().apply {
             put(KEY_PAIS_NOMBRE, pais.nombre)
             put(KEY_PAIS_SUPERFICIE, pais.superficie)
-            put(KEY_PAIS_INDEPENDIENTE, if (pais.esIndependiente) 1 else 0)
-            put(KEY_PAIS_FECHA_FUNDACION, pais.fechaFundacion.toString())
+            put(KEY_PAIS_INDEPENDIENTE, if (pais.es_independiente) 1 else 0)
+            put(KEY_PAIS_FECHA_FUNDACION, pais.fecha_fundacion.toString())
         }
         val result = db.update(TABLE_PAIS, values, "$KEY_PAIS_ID = ?", arrayOf(pais.id.toString()))
         db.close()

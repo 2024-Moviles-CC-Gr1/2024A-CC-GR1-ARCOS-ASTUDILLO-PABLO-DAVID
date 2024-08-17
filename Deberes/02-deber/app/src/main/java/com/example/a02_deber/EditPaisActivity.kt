@@ -47,8 +47,8 @@ class EditPaisActivity : AppCompatActivity() {
         pais?.let {
             nombreEditText.setText(it.nombre)
             superficieEditText.setText(it.superficie.toString())
-            independienteEditText.setText(if (it.esIndependiente) "1" else "0")
-            fechaFundacionEditText.setText(it.fechaFundacion.toString())
+            independienteEditText.setText(if (it.es_independiente) "1" else "0")
+            fechaFundacionEditText.setText(it.fecha_fundacion.toString())
         }
     }
 }

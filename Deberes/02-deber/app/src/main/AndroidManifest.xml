@@ -24,6 +24,11 @@
         <activity android:name=".AddPaisActivity" />
         <activity android:name=".CiudadesActivity" />
         <activity android:name=".AddCiudadActivity"></activity>
+        <activity android:name=".ViewPaisActivity"></activity>
+        <activity android:name=".EditPaisActivity"></activity>
+        <activity android:name=".EditCiudadActivity"></activity>
+
+
 
     </application>
 
